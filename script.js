@@ -26,7 +26,9 @@ function capturaTexto(){
 function encrypt(){
     /*Há um bug aqui que apaga o valor do encrypt que deveria estar na caixa de texto ao lado
     assim que o valor aparece.
-    Vou verificar quando tiver algum tempo livre...*/
+    Vou verificar quando tiver algum tempo livre...
+    Bug corrigido, o problema era no type do botao que estava como 'submit' em vez de button no html*/
+    
     var frase = texto.value;
     textoEncrypted = frase.replace(/e/g,"enter").replace(/i/g,"imes").replace(/a/g,"ai").replace(/o/g,"ober").replace(/u/g,"ufat");
     textoResultado = textoEncrypted;
@@ -47,7 +49,7 @@ Não permite acentuação
 function decrypt(){
 
     var frase = texto.value;
-    textoEncrypted = frase.replace(/enter/g,"e").replace(/imes/g,"i").replace(/ai/g,"a").replace(/ober/g,"o").replace(/ufat/g,"u");
+    textoDecrypted = frase.replace(/enter/g,"e").replace(/imes/g,"i").replace(/ai/g,"a").replace(/ober/g,"o").replace(/ufat/g,"u");
     textoResultado = textoDecrypted;
     console.log(textoResultado);
     caixaCodificado.value = textoResultado;

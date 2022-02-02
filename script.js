@@ -24,7 +24,9 @@ function capturaTexto(){
 }
 
 function encrypt(){
- 
+    /*Há um bug aqui que apaga o valor do encrypt que deveria estar na caixa de texto ao lado
+    assim que o valor aparece.
+    Vou verificar quando tiver algum tempo livre...*/
     var frase = texto.value;
     textoEncrypted = frase.replace(/e/g,"enter").replace(/i/g,"imes").replace(/a/g,"ai").replace(/o/g,"ober").replace(/u/g,"ufat");
     textoResultado = textoEncrypted;
@@ -56,9 +58,10 @@ function copyText(){
     let textoCopiado = caixaCodificado;
          textoCopiado.select();
          textoCopiado.setSelectionRange(0, 99999)
-         document.execCommand("copy");
+         document.execCommand('copy');
 }
 
 botaoEncrypt.onclick = encrypt;
 botaoDecrypt.onclick = decrypt;
 botaoCopy.onclick = copyText;
+
